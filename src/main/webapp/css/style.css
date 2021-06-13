@@ -1,0 +1,30 @@
+.custom-bg{
+    background: #673ab7!important;
+}
+/*.navbar{*/
+/*    color: 	#33ccff;*/
+/*}*/
+.admin .card{
+    border: solid;
+}
+.admin .card:hover{
+    background: #e2e2e2;
+    cursor: pointer;
+}
+.list-group-item.active{
+    background: #673ab7!important;
+    border-color: #673ab7!important;
+}
+.discount-label{
+    font-size: 10px!important;
+    font-style: italic!important;
+}
+.product-card:hover{
+    background: #e2e2e2;
+    cursor: pointer;
+}
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/Logo.png");
+}
