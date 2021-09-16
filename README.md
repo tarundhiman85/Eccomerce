@@ -11,7 +11,7 @@ This is an Ecommerce Website codded in Java technologies.
  
   ### Admin
   - Admin will Add the Category details of the Product
-  - Admin can Delete the Queantity of the Product
+  - Admin can Delete the Quantity of the Product
   - Admin can Add the New Product
   - Admin Will see the number of Details in the Website
 
