@@ -7,7 +7,7 @@ This is an Ecommerce Website codded in Java technologies.
  - User can Add the Product
  - User can Increase Quantity of the Product
  - User can Add Wishlist of the Product
- - User will Deltet Wishlist of the Product
+ - User will Delete Wishlist of the Product
  
   ### Admin
   - Admin will Add the Category details of the Product
