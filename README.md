@@ -35,3 +35,23 @@ This is an Ecommerce Website codded in Java technologies.
 
 ### Admin Panel
 ![image](https://user-images.githubusercontent.com/53346586/133150066-cc8e60f9-832b-41f6-8ddf-e9da9bc48557.png)
+
+
+###  0 LEVEL DFD
+![image](https://user-images.githubusercontent.com/53346586/142716393-e805b996-cdc6-4f39-b162-851ba2d65d72.png)
+
+### 1 LEVEL DFD
+![image](https://user-images.githubusercontent.com/53346586/142716403-2a86aa1a-9b16-4225-b08b-af4ac1bf0ba0.png)
+
+### USE CASE DIAGRAM
+![image](https://user-images.githubusercontent.com/53346586/142716413-de804a8c-f03e-4a28-ab42-39593959b3b3.png)
+
+### STATE CHART DIAGRAM
+![image](https://user-images.githubusercontent.com/53346586/142716430-4b29ccb0-82fc-41df-9780-b98e85204174.png)
+
+### SEQUENCE DIAGRAM
+![image](https://user-images.githubusercontent.com/53346586/142716447-6d0369b0-2a6e-406d-811c-4b44dc940c08.png)
+
+
+
+
