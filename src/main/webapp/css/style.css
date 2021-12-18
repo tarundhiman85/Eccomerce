@@ -1,0 +1,39 @@
+.custom-bg{
+    background: #673ab7!important;
+}
+.admin .card{
+    border: solid;
+}
+.admin .card:hover{
+    background: #e2e2e2;
+    cursor: pointer;
+}
+.list-group-item.active{
+    background: #673ab7!important;
+    border-color: #673ab7!important;
+}
+.discount-label{
+    font-size: 10px!important;
+    font-style: italic!important;
+}
+.product-card:hover{
+    background: #e2e2e2;
+    cursor: pointer;
+}
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/Logo.png");
+}
+.body {
+     background-image: url('../img/purple image.jpg');
+     background-size: 100%;
+ }
+.takingMargin{
+    margin-top: 100px;
+}
+.image-resize {
+    height: 150px;
+    width: 100px;
+    object-fit: contain;
+}
