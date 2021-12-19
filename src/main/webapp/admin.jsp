@@ -123,11 +123,11 @@
 
 
 <%--add category model--%>
-    <div class="modal fade" id="add-category-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" productId="add-category-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header custom-bg text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">Fill Category Details</h5>
+                    <h5 class="modal-title" productId="exampleModalLabel">Fill Category Details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -158,11 +158,11 @@
 <%--++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 
 <%--product modal--%>
-    <div class="modal fade" id="add-product-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal fade" productId="add-product-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header custom-bg text-white">
-                    <h5 class="modal-title" id="exampleModalLabel1">Fill Product Details</h5>
+                    <h5 class="modal-title" productId="exampleModalLabel1">Fill Product Details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -193,7 +193,7 @@
                         </div>
 
                         <div class="form-group">
-                            <select name="catId" class="form-control" id="">
+                            <select name="catId" class="form-control" productId="">
                                 <%--product category--%>
                                 <%
                                     for (Category c:list) {
@@ -207,7 +207,7 @@
                             <%--product file--%>
                             <div class="form-group">
                                 <label for="pPic">Select Picture of Product </label><br>
-                                <input type="file" id="pPic" name="pPic" required/>
+                                <input type="file" productId="pPic" name="pPic" required/>
                             </div>
 
                             <%--submit--%>

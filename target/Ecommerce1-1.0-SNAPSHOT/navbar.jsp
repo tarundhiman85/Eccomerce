@@ -5,7 +5,7 @@
 <div class="container">
     <a class="navbar-brand" href="index.jsp">
     </a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" productId="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 <%--            <img src="img/l1.jpeg" width="100" height="100" class="d-inline-block align-top" alt="" loading="lazy"/>&nbsp&nbsp--%>
             <li class="nav-item active">

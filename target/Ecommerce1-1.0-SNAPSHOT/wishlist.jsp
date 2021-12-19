@@ -33,7 +33,7 @@
     <div class="col-12">
         <%
             Session s=FactoryProvider.getFactory().openSession();
-            //Query q=s.createQuery("from Wishlist where user.id=getUserId()");
+            //Query q=s.createQuery("from Wishlist where user.productId=getUserId()");
             Query q=s.createQuery("from Wishlist");
             List<WishList> list=q.list();
             if(list.isEmpty()){

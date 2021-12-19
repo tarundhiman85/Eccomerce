@@ -19,12 +19,12 @@
                     <form action="LoginServlet" method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <input name="email" type="email" class="form-control" productId="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small productId="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input name="password" type="password" class="form-control" productId="exampleInputPassword1" placeholder="Password">
                         </div>
                         <a href="register.jsp" class="text-center d-block mb-2">If Not Registered Click Here</a>
                         <div class="container text-center">

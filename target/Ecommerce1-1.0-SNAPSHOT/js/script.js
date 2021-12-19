@@ -114,6 +114,7 @@ $(document).ready(function (){
 function goToCheckout(){
     window.location="checkout.jsp"
 }
+
 function disableButton() {
     $('.checkout-btn').prop("disabled", true);
 }
@@ -154,36 +155,53 @@ function paymentStart(){
     )
 }
 
-function orderNow(){
-    let cartString=localStorage.getItem("cart");
-    let cart=JSON.parse(cartString);
-    // console.log(cart);
-    let data;
-    let internalData =
-        cart.map((item)=>{
-            data+=`
-            <input name="user_name" value="" type="hidden"/>
-            `
-        })
-    $(".getOrderData").html(internalData);
+
+function orderNow() {
+        let cartString = localStorage.getItem("cart");
+        let cart = JSON.parse(cartString);
+        // console.log(cart)
+        $.ajax(
+            {
+                url:'OrderServlet',
+                data:JSON.stringify(cart),
+                contentType: 'application/json',
+                type:'POST',
+                data_type:'json',
+                success:function(data){
+                    //invokes when success
+                    // console.log(data)
+                    // alert("Yes")
+                    // window.location="index.jsp"
+                    $(".card-body").hide()
+                    $(".getOrderData").html("<h3>Your Order is Successfully ordered you will recieve" +
+                        " your order within 7 days</h3>")
+                },
+                error:function (error){
+                    //invoked when error
+                    console.log("something went wrong!!")
+                    alert("something went wrong")
+                }
+
+            }
+        )
+    }
+    function tableToJson(table){
+    let data = [];
+    //first row need to be header
+    let header = [];
+    for(let i=0; i<table.rows[0].cells.length; i++){
+    header[i] = table.rows[0].innerHTML.toLowerCase().replace(/ /gi,'');
 }
-//to do sent this json as a list
-// function tableToJson(table){
-//     let data = [];
-//     //first row need to be header
-//     let header = [];
-//     for(let i=0; i<table.rows[0].cells.length; i++){
-//         header[i] = table.rows[0].innerHTML.toLowerCase().replace(/ /gi,'');
-//     }
-//     //go through cells
-//     for(let i=1; i<table.rows.length; i++){
-//         let tableRow = table.rows[i];
-//         let rowData = {};
-//         for(let j=0; j<tableRow.cells.length; j++){
-//             rowData[header[j]] = tableRow.cells[j].innerHTML;
-//         }
-//         data.push(rowData);
-//     }
-//     return data;
-// }
+    //go through cells
+    for(let i=1; i<table.rows.length; i++){
+    let tableRow = table.rows[i];
+    let rowData = {};
+    for(let j=0; j<tableRow.cells.length; j++){
+    rowData[header[j]] = tableRow.cells[j].innerHTML;
+}
+    data.push(rowData);
+}
+    return data;
+}
+
 

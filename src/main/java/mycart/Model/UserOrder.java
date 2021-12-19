@@ -1,25 +1,29 @@
 package mycart.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
 public class UserOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String nameProduct;
-    private int priceProduct;
-    private int quantityProduct;
-    private int totalPrice;
+    @JsonProperty("productId")
+    private int productId;
+    @JsonProperty("productName")
+    private String productName;
+    @JsonProperty("productQuantity")
+    private int productQuantity;
+    @JsonProperty("productPrice")
+    private int productPrice;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")
-    private Order order;
+    private Orders order;
 
-    public UserOrder(String nameProduct, int priceProduct, int quantityProduct, int totalPrice, Order order) {
-        this.nameProduct = nameProduct;
-        this.priceProduct = priceProduct;
-        this.quantityProduct = quantityProduct;
-        this.totalPrice = totalPrice;
+    public UserOrder(String productName, int productQuantity, int productPrice, Orders order) {
+        this.productName = productName;
+        this.productQuantity = productQuantity;
+        this.productPrice = productPrice;
         this.order = order;
     }
 
@@ -27,51 +31,44 @@ public class UserOrder {
 
     }
 
-    public int getId() {
-        return id;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public String getNameProduct() {
-        return nameProduct;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setNameProduct(String nameProduct) {
-        this.nameProduct = nameProduct;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public int getPriceProduct() {
-        return priceProduct;
+
+    public int getProductQuantity() {
+        return productQuantity;
     }
 
-    public void setPriceProduct(int priceProduct) {
-        this.priceProduct = priceProduct;
+    public void setProductQuantity(int productQuantity) {
+        this.productQuantity = productQuantity;
     }
 
-    public int getQuantityProduct() {
-        return quantityProduct;
+    public int getProductPrice() {
+        return productPrice;
     }
 
-    public void setQuantityProduct(int quantityProduct) {
-        this.quantityProduct = quantityProduct;
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public Order getOrder() {
+    public Orders getOrder() {
         return order;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(Orders order) {
         this.order = order;
     }
 }

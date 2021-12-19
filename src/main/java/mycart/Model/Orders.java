@@ -1,23 +1,27 @@
 package mycart.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
-public class Order {
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_Id")
     private int orderId;
+    @Column(name = "total_price")
     private int totalPrice;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Order( int totalPrice, User user) {
+    public Orders( int totalPrice, User user) {
         this.totalPrice = totalPrice;
         this.user = user;
     }
 
-    public Order() {
+    public Orders() {
 
     }
 

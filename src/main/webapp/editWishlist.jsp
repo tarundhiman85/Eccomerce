@@ -1,6 +1,6 @@
-<%@ page import="com.learn.mycart.Helper.FactoryProvider" %>
+<%@ page import="mycart.Helper.FactoryProvider" %>
 <%@ page import="org.hibernate.Session" %>
-<%@ page import="com.learn.mycart.Model.WishList" %>
+<%@ page import="mycart.Model.WishList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,23 +18,23 @@
         <form action="UpdateWishServlet" method="post">
             <input value="<%=wishlist.getId()%>" name="wishlist_id" type="hidden"/>
             <div class="mb-3">
-                <label for="title" class="form-label">Wishlist Title</label>
+                <%--@declare id="title"--%><label for="title" class="form-label">Wishlist Title</label>
                 <input
                         name="title"
                         required
                         type="text"
                         class="form-control"
-                        id="title"
+                        productId="title"
                         placeholder="Enter here"
                         value="<%=wishlist.getTitle()%>"
                         aria-describedby="emailHelp"/>
             </div>
             <div class="mb-3">
-                <label for="content" class="form-label">Wishlist Content</label>
+                <%--@declare id="content"--%><label for="content" class="form-label">Wishlist Content</label>
                 <textarea
                         name="content"
                         required
-                        id="content"
+                        productId="content"
                         placeholder="Enter your Content here"
                         class="form-control"
                         style="height: 300px"

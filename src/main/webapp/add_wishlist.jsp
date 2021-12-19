@@ -31,7 +31,7 @@
                 required
                 type="text"
                 class="form-control"
-                id="title"
+                productId="title"
                 placeholder="Enter the Category Here"
                 aria-describedby="emailHelp"/>
     </div>
@@ -40,7 +40,7 @@
         <textarea
                 name="content"
                 required
-                id="content"
+                productId="content"
                 placeholder="Enter your Items here"
                 class="form-control"
                 style="height: 200px"

@@ -8,6 +8,7 @@ import java.util.Random;
 @Table(name = "wish_table")
 public class WishList {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
     @Column(length = 1500)

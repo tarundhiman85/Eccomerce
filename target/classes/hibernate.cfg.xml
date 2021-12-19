@@ -16,7 +16,7 @@
         <mapping class="mycart.Model.Category"/>
         <mapping class="mycart.Model.Product"/>
         <mapping class="mycart.Model.WishList"/>
-        <mapping class="mycart.Model.Order"/>
+        <mapping class="mycart.Model.Orders"/>
         <mapping class="mycart.Model.UserOrder"/>
     </session-factory>
 </hibernate-configuration>
