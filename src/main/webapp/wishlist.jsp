@@ -1,7 +1,7 @@
-<%@ page import="com.learn.mycart.Helper.FactoryProvider" %>
+<%@ page import="mycart.Helper.FactoryProvider" %>
 <%@ page import="org.hibernate.Session" %>
 <%@ page import="org.hibernate.query.Query" %>
-<%@ page import="com.learn.mycart.Model.WishList" %>
+<%@ page import="mycart.Model.WishList" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>

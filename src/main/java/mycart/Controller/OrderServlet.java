@@ -2,7 +2,9 @@ package mycart.Controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import mycart.Dao.UserDao;
 import mycart.Helper.FactoryProvider;
+import mycart.Model.Balance;
 import mycart.Model.Orders;
 import mycart.Model.User;
 import mycart.Model.UserOrder;
@@ -59,22 +61,33 @@ public class OrderServlet extends HttpServlet {
         for (int i=0; i<userOrder.length; i++){
             userOrder[i].setOrder(order);
         }
+        //db logic
         HttpSession httpSession = request.getSession();
         User user =(User) httpSession.getAttribute("current-user");
+        Balance balance = new UserDao(FactoryProvider.getFactory()).getBalanceByUserId(user.getUserId(), user);
         order.setUser(user);
-
-        //db logic
-        Session session = FactoryProvider.factory.openSession();
-        Transaction tx = session.beginTransaction();
-        for (int i=0; i<userOrder.length; i++){
-            UserOrder userOrder1 = userOrder[i];
-            session.save(userOrder1);
+        if(balance.getAvailBalance()>=totalPrice){
+            balance.setAvailBalance(balance.getAvailBalance()-totalPrice);
+            Session session = FactoryProvider.factory.openSession();
+            Transaction tx = session.beginTransaction();
+            for (int i=0; i<userOrder.length; i++){
+                UserOrder userOrder1 = userOrder[i];
+                session.save(userOrder1);
+            }
+            session.update(balance);
+            tx.commit();
+            session.close();
+            response.setContentType("text/html");
+            response.getWriter().print("200");
         }
-        tx.commit();
-        session.close();
-        response.setContentType("text/html");
-        response.getWriter().print("200");
-        // 6. Send List<Order> as JSON to client
+        else{
+            try {
+                throw new Exception();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // 6. Send List<Order> as JSON to client
 //        mapper.writeValue(response.getOutputStream(), orderList);
+    }
     }
 }

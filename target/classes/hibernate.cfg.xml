@@ -18,5 +18,6 @@
         <mapping class="mycart.Model.WishList"/>
         <mapping class="mycart.Model.Orders"/>
         <mapping class="mycart.Model.UserOrder"/>
+        <mapping class="mycart.Model.Balance"/>
     </session-factory>
 </hibernate-configuration>

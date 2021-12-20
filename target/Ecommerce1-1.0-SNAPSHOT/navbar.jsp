@@ -7,9 +7,11 @@
     </a>
     <div class="collapse navbar-collapse" productId="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-<%--            <img src="img/l1.jpeg" width="100" height="100" class="d-inline-block align-top" alt="" loading="lazy"/>&nbsp&nbsp--%>
             <li class="nav-item active">
                 <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="mycartBank.jsp">Wallet</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="wishlist.jsp">Wishlist</a>
@@ -35,14 +37,17 @@
             <%
                 } else {
             %>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="viewOrders.jsp">View Orders</a>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#"><%=user1.getUserName()%></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="LogoutServlet">Logout</a>
             </li>
-         <%            }
-         %>
+         <%}%>
         </ul>
     </div>
 </div>

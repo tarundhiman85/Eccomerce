@@ -106,6 +106,7 @@ function deleteItemFromCart(pid){
 }
 
 
+
 //when the document is ready then jquery run
 $(document).ready(function (){
     updateCart()
@@ -118,6 +119,7 @@ function goToCheckout(){
 function disableButton() {
     $('.checkout-btn').prop("disabled", true);
 }
+
 function enableButton() {
     $('.checkout-btn').prop("disabled", false);
 }
@@ -156,36 +158,8 @@ function paymentStart(){
 }
 
 
-function orderNow() {
-        let cartString = localStorage.getItem("cart");
-        let cart = JSON.parse(cartString);
-        // console.log(cart)
-        $.ajax(
-            {
-                url:'OrderServlet',
-                data:JSON.stringify(cart),
-                contentType: 'application/json',
-                type:'POST',
-                data_type:'json',
-                success:function(data){
-                    //invokes when success
-                    // console.log(data)
-                    // alert("Yes")
-                    // window.location="index.jsp"
-                    $(".card-body").hide()
-                    $(".getOrderData").html("<h3>Your Order is Successfully ordered you will recieve" +
-                        " your order within 7 days</h3>")
-                },
-                error:function (error){
-                    //invoked when error
-                    console.log("something went wrong!!")
-                    alert("something went wrong")
-                }
 
-            }
-        )
-    }
-    function tableToJson(table){
+function tableToJson(table){
     let data = [];
     //first row need to be header
     let header = [];

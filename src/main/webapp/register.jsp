@@ -19,19 +19,19 @@
                        <h3 class="text-center my-3">Sign Up Here!!</h3>
                        <form action="RegisterServlet" method="post">
                            <div class="form-group">
-                               <label for="name">User Name</label>
+                               <%--@declare id="name"--%><label for="name">User Name</label>
                                <input name="user_name" type="text" class="form-control" productId="name" placeholder="Enter Here" aria-describedby="emailHelp" >
                            </div>
                            <div class="form-group">
-                               <label for="email">User Email</label>
+                               <%--@declare id="email"--%><label for="email">User Email</label>
                                <input name="user_email" type="email" class="form-control" productId="email" placeholder="Enter Here" aria-describedby="emailHelp" >
                            </div>
                            <div class="form-group">
-                               <label for="password">User Password</label>
+                               <%--@declare id="password"--%><label for="password">User Password</label>
                                <input name="user_password" type="password" class="form-control" productId="password" placeholder="Enter Here" aria-describedby="emailHelp" >
                            </div>
                            <div class="form-group">
-                               <label for="phone">User Phone</label>
+                               <%--@declare id="phone"--%><label for="phone">User Phone</label>
                                <input name="user_phone" type="number" class="form-control" productId="phone" placeholder="Enter Here" aria-describedby="emailHelp" >
                            </div>
                            <div class="form-group">

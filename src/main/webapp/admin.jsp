@@ -1,9 +1,9 @@
-<%@ page import="com.learn.mycart.Model.User" %>
-<%@ page import="com.learn.mycart.Dao.CategoryDao" %>
-<%@ page import="com.learn.mycart.Helper.FactoryProvider" %>
-<%@ page import="com.learn.mycart.Model.Category" %>
+<%@ page import="mycart.Model.User" %>
+<%@ page import="mycart.Dao.CategoryDao" %>
+<%@ page import="mycart.Helper.FactoryProvider" %>
+<%@ page import="mycart.Model.Category" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.learn.mycart.Helper.Helper" %>
+<%@ page import="mycart.Helper.Helper" %>
 <%@ page import="java.util.Map" %>
 
 
@@ -206,7 +206,7 @@
                         </div>
                             <%--product file--%>
                             <div class="form-group">
-                                <label for="pPic">Select Picture of Product </label><br>
+                                <%--@declare id="ppic"--%><label for="pPic">Select Picture of Product </label><br>
                                 <input type="file" productId="pPic" name="pPic" required/>
                             </div>
 

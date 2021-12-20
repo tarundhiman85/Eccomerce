@@ -15,12 +15,15 @@
 <%--<body style="background-image: url('img/purple image.jpg')">--%>
 <body>
 <%@include file="navbar.jsp"%>
+
 <div class="container text-center">
     <h1 style="color: black">Welcome <span class="animate"></span></h1>
 </div>
+
 <%--<div class="container-fluid" style="background-image: url('img/purple image.jpg')">--%>
 <div class="container-fluid" >
-<div class="row mt-2 mx-auto">
+
+    <div class="row mt-2 mx-auto">
     <%
         String cat = request.getParameter("category");
        // out.println(cat);
@@ -43,74 +46,106 @@
         List<Category> clist = cdao.getCategories();
     %>
     <%--show categories--%>
-    <div class="text-left mt-4">
-        <div class="list-group">
-            <a href="index.jsp?category=all" class="list-group-item list-group-item-action active">
-                All Products
-            </a>
-            <%
-                for(Category c:clist){
-            %>
-            <a href="index.jsp?category=<%=c.getCategoryId()%>" class="list-group-item list-group-item-action"><%=c.getCategoryTitle()%></a>
-            <%
-                }
-            %>
-        </div>
-    </div>
+<%--    <div class="text-left mt-4">--%>
+<%--        <div class="list-group">--%>
+<%--            <a href="index.jsp?category=all" class="list-group-item list-group-item-action active">--%>
+<%--                All Products--%>
+<%--            </a>--%>
+<%--            <%--%>
+<%--                for(Category c:clist){--%>
+<%--            %>--%>
+<%--            <a href="index.jsp?category=<%=c.getCategoryId()%>" class="list-group-item list-group-item-action"><%=c.getCategoryTitle()%></a>--%>
+<%--            <%--%>
+<%--                }--%>
+<%--            %>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 
     <%--show products--%>
-    <div class="col-md-10">
-     <%--Row--%>
-        <div class="row mt-4">
-     <%--Col:takes 12 grid--%>
-            <div class="col-md-12">
-                <div class="card-columns">
-      <%--Traversing show products--%>
-                    <%
-                        for (Product p:list){
-                    %>
-      <%--Product Card--%>
-                    <div class="card product-card">
-                        <div class="container text-center">
-                            <img src="img/products/<%=p.getpPhoto()%>" style="max-height: 200px;width: auto;" class="card-img-top m-3 image-resize" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%=p.getpName()%>
-                            </h5>
-                            <p class="card-text">
-                                <%=Helper.get10Words(p.getpDesc())%>
-                            </p>
-                        </div>
-                        </div>
-                        <div class="card-footer text-center">
-                            <button class="btn custom-bg text-white" onclick="add_to_cart(<%=p.getPid()%>,'<%=p.getpName()%>',<%=p.getPriceAfterApplyingDiscount()%>)">Add to Cart</button>
-                            <button class="btn btn-outline-success">&#8377;<%=p.getPriceAfterApplyingDiscount()%>/- <span class="text-secondary discount-label">&#8377;<%=p.getpPrice()%> <%=p.getpDiscount()%>%off</span></button>
-                        </div>
-                    </div>
-                    <%
-                        }
-                        if(list.size()==0){
-                            out.println("<h3>No items in this Category</h3>");
-                        }
-                    %>
-                </div>
+<%--    <div class="col-md-10">--%>
+<%--     &lt;%&ndash;Row&ndash;%&gt;--%>
+<%--        <div class="row mt-4">--%>
+<%--     &lt;%&ndash;Col:takes 12 grid&ndash;%&gt;--%>
+<%--            <div class="col-md-12">--%>
+<%--                <div class="card-columns">--%>
+<%--      &lt;%&ndash;Traversing show products&ndash;%&gt;--%>
+<%--                    <%--%>
+<%--                        for (Product p:list){--%>
+<%--                    %>--%>
+<%--      &lt;%&ndash;Product Card&ndash;%&gt;--%>
+<%--                    <div class="card product-card">--%>
+<%--                        <div class="container text-center">--%>
+<%--                            <img src="img/products/<%=p.getpPhoto()%>" style="max-height: 200px;width: auto;" class="card-img-top m-3 image-resize" alt="">--%>
+<%--                        <div class="card-body">--%>
+<%--                            <h5 class="card-title">--%>
+<%--                                <%=p.getpName()%>--%>
+<%--                            </h5>--%>
+<%--                            <p class="card-text">--%>
+<%--                                <%=Helper.get10Words(p.getpDesc())%>--%>
+<%--                            </p>--%>
+<%--                        </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="card-footer text-center">--%>
+<%--                            <button class="btn custom-bg text-white" onclick="add_to_cart(<%=p.getPid()%>,'<%=p.getpName()%>',<%=p.getPriceAfterApplyingDiscount()%>)">Add to Cart</button>--%>
+<%--                            <button class="btn btn-outline-success">&#8377;<%=p.getPriceAfterApplyingDiscount()%>/- <span class="text-secondary discount-label">&#8377;<%=p.getpPrice()%> <%=p.getpDiscount()%>%off</span></button>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <%--%>
+<%--                        }--%>
+<%--                        if(list.size()==0){--%>
+<%--                            out.println("<h3>No items in this Category</h3>");--%>
+<%--                        }--%>
+<%--                    %>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+
+
+    <div class="container1">
+            <%
+                for (Product p:list){
+            %>
+        <div class="item1">
+            <img src="img/products/<%=p.getpPhoto()%>" style="max-height: 200px;width: auto;" class="card-img-top m-3 image-resize" alt="">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%=p.getpName()%>
+                </h5>
+                <p class="card-text">
+                    <%=Helper.get10Words(p.getpDesc())%>
+                </p>
             </div>
-        </div>
+            <div class="card-footer text-center">
+                <button class="btn custom-bg text-white" onclick="add_to_cart(<%=p.getPid()%>,'<%=p.getpName()%>',<%=p.getPriceAfterApplyingDiscount()%>)">Add to Cart</button>
+                <button class="btn btn-outline-success">&#8377;<%=p.getPriceAfterApplyingDiscount()%>/- <span class="text-secondary discount-label">&#8377;<%=p.getpPrice()%> <%=p.getpDiscount()%>%off</span></button>
+            </div>
+            <%
+                }
+                %>
+             </div>
+            <%
+                if(list.size()==0){
+                    out.println("<h3>No items in this Category</h3>");
+                }
+            %>
+    </div>
     </div>
 </div>
-</div>
-<!-- Start footer  -->
-<footer class="container-fluid bg-dark text-white" style="border-top:3px solid #DC3545; margin-top: 200px">
-    <div class="container">
-        <div class="row py-3">
-            <div class="col-md-6 col-sm-12">
-                <div>
-                <small>Designed By <span style="color:greenyellow">Tarun Dhiman</span>&copy; 2021</small>
-            </div>
-        </div>
-    </div>
-    </div>
-</footer>
+
+
+<%--<!-- Start footer  -->--%>
+<%--<footer class="container-fluid bg-dark text-white" style="border-top:3px solid #DC3545; margin-top: 200px">--%>
+<%--    <div class="container">--%>
+<%--        <div class="row py-3">--%>
+<%--            <div class="col-md-6 col-sm-12">--%>
+<%--                <div>--%>
+<%--                <small>Designed By <span style="color:greenyellow">Tarun Dhiman</span>&copy; 2021</small>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--    </div>--%>
+<%--</footer>--%>
     <script>
         let animate=new Typed('.animate',{
             strings:["to MyCart"],

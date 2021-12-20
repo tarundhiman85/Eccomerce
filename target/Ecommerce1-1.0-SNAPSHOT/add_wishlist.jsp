@@ -25,7 +25,7 @@
 <form action="SaveWishlistServlet" method="post">
     <div class="container">
     <div class="mb-3">
-        <label style="color: black" for="title" class="form-label">WishList Category</label>
+        <%--@declare id="title"--%><label style="color: black" for="title" class="form-label">WishList Category</label>
         <input
                 name="title"
                 required
@@ -36,7 +36,7 @@
                 aria-describedby="emailHelp"/>
     </div>
     <div class="mb-3">
-        <label style="color: black" for="content" class="form-label">Wishlist Items</label>
+        <%--@declare id="content"--%><label style="color: black" for="content" class="form-label">Wishlist Items</label>
         <textarea
                 name="content"
                 required

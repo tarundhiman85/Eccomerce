@@ -37,3 +37,22 @@
     width: 100px;
     object-fit: contain;
 }
+
+/*.container1{*/
+/*    display: grid;*/
+/*    grid-template-rows: 1fr 1fr 1fr;*/
+/*    grid-template-columns: 1fr 1fr 1fr;*/
+/*    row-gap: 12px;*/
+/*    column-gap: 12px;*/
+/*}*/
+/*.item1{*/
+/*    height: 300px;*/
+/*    width: 300px;*/
+/*}*/
+
+.container1{
+    display: flex;
+}
+.item1{
+    flex-flow: row wrap;
+}
